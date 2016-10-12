@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  mysql:
+    image: my-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+  php:
+    image: my-php
+    ports:
+      - 80:80
+    volumes:
+      - ./app:/var/www/html/

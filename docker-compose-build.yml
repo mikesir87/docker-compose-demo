@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  mysql:
+    build: ./docker/mysql/
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+  php:
+    build: ./docker/php/
+    ports:
+      - 80:80
+    volumes:
+      - ./app:/var/www/html/
